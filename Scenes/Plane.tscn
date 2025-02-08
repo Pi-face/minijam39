@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl83pjkv4jhn1"]
+
+[ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_2adeh"]
+[ext_resource type="Texture2D" uid="uid://cssgcqupvvcsx" path="res://Assets/Aircraft_01.png" id="1_blgwj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxjev"]
+size = Vector2(104, 86)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2adeh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("1_blgwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yxjev")
+
+[node name="Camera2D" type="Camera2D" parent="."]
