@@ -1,21 +1,11 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
+@export var speed = 400
 
-func _physics_process(delta: float) -> void:
-    var direction = Vector2.ZERO
+func get_input():
+	var input_direction = Input.get_vector("left", "right", "up", "down")
+	velocity = input_direction * speed
 
-    if Input.is_action_pressed("ui_right"):
-        direction.x += 1
-    if Input.is_action_pressed("ui_left"):
-        direction.x -= 1
-    if Input.is_action_pressed("ui_down"):
-        direction.y += 1
-    if Input.is_action_pressed("ui_down"):
-        direction.y -= 1
-    
-    if direction.length() > 1:
-        direction = direction.normalized()
-    
-    velocity = direction * speed
-    move_and_slide()
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
