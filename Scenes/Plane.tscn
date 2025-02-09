@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bl83pjkv4jhn1"]
 
-[ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_2adeh"]
-[ext_resource type="Texture2D" uid="uid://cssgcqupvvcsx" path="res://Assets/Aircraft_01.png" id="1_blgwj"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_2adeh"]
+[ext_resource type="Texture2D" uid="uid://cpfipr1cntkqu" path="res://Assets/ships_packed.png" id="2_e8yux"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxjev"]
 size = Vector2(104, 86)
@@ -11,7 +11,9 @@ script = ExtResource("1_2adeh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
-texture = ExtResource("1_blgwj")
+texture = ExtResource("2_e8yux")
+region_enabled = true
+region_rect = Rect2(0, 4, 32, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yxjev")
