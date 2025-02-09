@@ -1,21 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl83pjkv4jhn1"]
+[gd_scene load_steps=7 format=3 uid="uid://bl83pjkv4jhn1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_2adeh"]
 [ext_resource type="Texture2D" uid="uid://cpfipr1cntkqu" path="res://Assets/ships_packed.png" id="2_e8yux"]
+[ext_resource type="Script" path="res://Scripts/jet_trail.gd" id="3_26tk7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxjev"]
-size = Vector2(104, 86)
+[sub_resource type="Curve" id="Curve_3bwvj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.91277, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.495798), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_8kwon"]
+offsets = PackedFloat32Array(0, 0.166008, 0.462451, 0.737154)
+colors = PackedColorArray(0, 0, 0, 0, 0.921569, 0, 0, 0.862745, 0.956863, 0.811765, 0, 0.862745, 1, 1, 1, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slml3"]
+radius = 4.0
+height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2adeh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 texture_filter = 3
 texture = ExtResource("2_e8yux")
 region_enabled = true
 region_rect = Rect2(0, 4, 32, 24)
 
+[node name="Trail" type="Line2D" parent="Sprite2D"]
+top_level = true
+z_index = 1
+width = 5.0
+width_curve = SubResource("Curve_3bwvj")
+gradient = SubResource("Gradient_8kwon")
+script = ExtResource("3_26tk7")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yxjev")
+shape = SubResource("CapsuleShape2D_slml3")
 
 [node name="Camera2D" type="Camera2D" parent="."]

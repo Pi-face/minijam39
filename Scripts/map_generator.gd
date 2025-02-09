@@ -17,7 +17,6 @@ func _physics_process(_delta: float) -> void:
 				_generate_patch(Vector2i(x, y))
 			
 	_clear_unused_patches(current_patch)
-	print(noise_patches.size())
 
 
 
