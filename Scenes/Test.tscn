@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://o4tx420k5yv"]
+
+[ext_resource type="Script" path="res://Scripts/test.gd" id="1_f1of0"]
+[ext_resource type="PackedScene" uid="uid://c1tpg2uj77edb" path="res://Scenes/TerrainPatch.tscn" id="2_27kfo"]
+
+[node name="Test" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_f1of0")
+rand_seed = 36
+
+[node name="Tiles" parent="." instance=ExtResource("2_27kfo")]
+position = Vector2(189, 36)
