@@ -130,7 +130,6 @@ texture = ExtResource("2_h40gg")
 sources/0 = SubResource("TileSetAtlasSource_v4mlk")
 
 [node name="Tiles" type="TileMapLayer"]
-position = Vector2(-1, 0)
 tile_set = SubResource("TileSet_u775m")
 script = ExtResource("1_lgaw3")
 
