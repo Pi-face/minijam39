@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://drqpvlhx3qq03"]
+[gd_scene load_steps=6 format=3 uid="uid://drqpvlhx3qq03"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_w1lyp"]
 [ext_resource type="Script" path="res://Scripts/map_generator.gd" id="3_gi2ij"]
 [ext_resource type="PackedScene" uid="uid://bl83pjkv4jhn1" path="res://Scenes/Plane.tscn" id="4_j71m0"]
 [ext_resource type="PackedScene" uid="uid://c1tpg2uj77edb" path="res://Scenes/TerrainPatch.tscn" id="4_kcvg4"]
+[ext_resource type="PackedScene" uid="uid://cnxomrxd7isdh" path="res://Scenes/Enemy.tscn" id="5_05md8"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_w1lyp")
@@ -14,3 +15,7 @@ terrain_patch_scene = ExtResource("4_kcvg4")
 
 [node name="Player" parent="." instance=ExtResource("4_j71m0")]
 position = Vector2(320, 180)
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_05md8")]
+position = Vector2(566, 115)
+player = NodePath("../Player")
