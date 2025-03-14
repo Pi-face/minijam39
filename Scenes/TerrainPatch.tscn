@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1tpg2uj77edb"]
 
-[ext_resource type="Script" path="res://Scripts/terrain_patch.gd" id="1_lgaw3"]
+[ext_resource type="Script" uid="uid://nwn5mvbhlbs7" path="res://Scripts/terrain_patch.gd" id="1_lgaw3"]
 [ext_resource type="Texture2D" uid="uid://cdo3xp78b7ngy" path="res://Assets/tiles_packed.png" id="2_h40gg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4mlk"]
@@ -138,4 +138,4 @@ visible = false
 modulate = Color(0, 0, 0, 1)
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Test"
+text = "0, 0"

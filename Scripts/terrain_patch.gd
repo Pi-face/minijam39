@@ -1,3 +1,4 @@
+@tool
 class_name TerrainPatch
 extends TileMapLayer
 
@@ -77,6 +78,7 @@ func generate(noise : FastNoiseLite, loc : Vector2i):
 				var n : int = get_neighborhood(noise_loc, noise)
 				var t : Array = TILES.get(n, [Vector2i(6, 3)])
 				set_cell(Vector2i(x, y), 0, t.pick_random())
+				#set_cell(Vector2i(x, y), 0, Vector2i(2, 4))
 			else:
 				set_cell(Vector2i(x, y), 0, Vector2i(6, 3))
 
